@@ -4,40 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LinkedListVisualisation"
+    android:id="@+id/constraintLayout"
+    >
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addNode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
         android:text="Add"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/node_d"
-        tools:layout_editor_absoluteY="264dp" />
+        app:layout_constraintBottom_toTopOf="@+id/delNode"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/delNode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="52dp"
         android:text="Delete"
-        app:layout_constraintEnd_toEndOf="@+id/addNode"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/addNode"
-        app:layout_constraintTop_toBottomOf="@+id/addNode" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/node_a"
         android:layout_width="120dp"
         android:layout_height="72dp"
         android:layout_marginStart="52dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="52dp"
+        android:alpha="0"
         android:src="@drawable/node_a"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:visibility="invisible"
-        tools:visibility="visible"
-        />
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/node_b"
@@ -45,8 +46,8 @@
         android:layout_height="72dp"
         android:layout_marginStart="52dp"
         android:src="@drawable/node_b"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/link_a_b"
+        android:alpha="0"
+        app:layout_constraintBottom_toTopOf="@+id/node_a"
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
 
@@ -56,8 +57,8 @@
         android:layout_height="72dp"
         android:layout_marginStart="52dp"
         android:src="@drawable/node_c"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/link_b_c"
+        android:alpha="0"
+        app:layout_constraintBottom_toTopOf="@+id/node_b"
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
 
@@ -67,8 +68,8 @@
         android:layout_height="72dp"
         android:layout_marginStart="52dp"
         android:src="@drawable/node_d"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/link_c_d"
+        android:alpha="0"
+        app:layout_constraintBottom_toTopOf="@+id/node_c"
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
 
@@ -78,8 +79,8 @@
         android:layout_height="72dp"
         android:layout_marginStart="52dp"
         android:src="@drawable/node_e"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/link_d_e"
+        android:alpha="0"
+        app:layout_constraintBottom_toTopOf="@+id/node_d"
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
 
@@ -94,7 +95,7 @@
         app:layout_constraintBottom_toTopOf="@+id/node_a"
         app:layout_constraintEnd_toEndOf="@+id/node_a"
         app:layout_constraintStart_toStartOf="@+id/node_a"
-        android:visibility="invisible"
+        android:alpha="0"
         tools:visibility="visible"/>
 
     <ImageView
@@ -106,7 +107,7 @@
         app:layout_constraintBottom_toTopOf="@+id/node_b"
         app:layout_constraintEnd_toEndOf="@+id/node_b"
         app:layout_constraintStart_toStartOf="@+id/node_b"
-        android:visibility="invisible"
+        android:alpha="0"
         tools:visibility="visible" />
 
     <ImageView
@@ -118,7 +119,7 @@
         app:layout_constraintBottom_toTopOf="@+id/node_c"
         app:layout_constraintEnd_toEndOf="@+id/node_c"
         app:layout_constraintStart_toStartOf="@+id/node_c"
-        android:visibility="invisible"
+        android:alpha="0"
         tools:visibility="visible" />
 
     <ImageView
@@ -130,7 +131,7 @@
         app:layout_constraintBottom_toTopOf="@+id/node_d"
         app:layout_constraintEnd_toEndOf="@+id/node_d"
         app:layout_constraintStart_toStartOf="@+id/node_d"
-        android:visibility="invisible"
+        android:alpha="0"
         tools:visibility="visible"/>
 
     <ImageView
@@ -139,11 +140,12 @@
         android:layout_height="29dp"
         android:rotation="90"
         android:src="@drawable/arrow_med"
+        android:alpha="0"
         app:layout_constraintBottom_toTopOf="@+id/node_e"
         app:layout_constraintEnd_toEndOf="@+id/node_e"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="@+id/node_e"
-        android:visibility="invisible"
-        tools:visibility="visible"/>
+        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
